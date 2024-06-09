@@ -1,4 +1,5 @@
 import footerPattern from '../images/footer-pattern.jpg';
+import logo from '../images/logo.png';
 import { FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaMobileAlt } from "react-icons/fa";
 
 const BannerImg = {
@@ -56,7 +57,7 @@ const Footer = () => {
           {/* company details */}
           <div className="py-8 px-4">
             <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3">
-              <img src="src/images/logo.png" alt="" className="max-w-[50px]" />
+              <img src={logo} alt="Shree Siddharoodha Agro Equipments" className="max-w-[50px]" />
               Shree Siddharoodha Agro Equipments
             </h1>
             <p>
