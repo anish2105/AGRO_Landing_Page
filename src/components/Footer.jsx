@@ -1,139 +1,136 @@
+import footerPattern from '../images/footer-pattern.jpg';
+import { FaFacebook, FaInstagram, FaLinkedin, FaLocationArrow, FaMobileAlt } from "react-icons/fa";
 
+const BannerImg = {
+  backgroundImage: `url(${footerPattern})`,
+  backgroundPosition: "bottom",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  height: "100%",
+  width: "100%",
+};
 
-export default function Footer() {
+const FooterLinks = [
+  {
+    title: "About-Us",
+    link: "#about-us",
+  },
+  {
+    title: "Services",
+    link: "#services",
+  },
+  {
+    title: "Products",
+    link: "#products",
+  },
+  {
+    title: "Company",
+    link: "#company",
+  },
+];
+
+const ImpFooterLinks = [
+  {
+    title: "Home",
+    link: "#home",
+  },
+  {
+    title: "Terms & Conditions",
+    link: "#terms",
+  },
+  {
+    title: "Privacy Policy",
+    link: "#privacy-policy",
+  },
+  {
+    title: "Contact Us",
+    link: "#contact",
+  },
+];
+
+const Footer = () => {
   return (
-    <footer className="relative bg-green-200 pt-8 pb-6">
-      <div
-        className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-        style={{ height: "80px" }}
-      >
-        <svg
-          className="absolute bottom-0 overflow-hidden"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          version="1.1"
-          viewBox="0 0 2560 100"
-          x="0"
-          y="0"
-        >
-          <polygon
-            className="text-green-200 fill-current"
-            points="2560 0 2560 100 0 100"
-          ></polygon>
-        </svg>
-      </div>
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap">
-          <div className="w-full lg:w-6/12 px-4">
-            <h4 className="text-3xl font-semibold">
-              Lets keep in touch!
-            </h4>
-            <h5 className="text-lg mt-0 mb-2 text-gray-700">
-              Find us on any of these platforms, we respond 1-2 business days.
-            </h5>
-            <div className="mt-6">
-              <button
-                className="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                type="button"
-              >
-                <i className="flex fab fa-twitter"></i>
-              </button>
-              <button
-                className="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                type="button"
-              >
-                <i className="flex fab fa-facebook-square"></i>
-              </button>
-              <button
-                className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                type="button"
-              >
-                <i className="flex fab fa-dribbble"></i>
-              </button>
-              <button
-                className="bg-white text-gray-900 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                type="button"
-              >
-                <i className="flex fab fa-github"></i>
-              </button>
-            </div>
+    <div style={BannerImg} className="text-white">
+      <div className="container">
+        <div data-aos="zoom-in" className="grid md:grid-cols-3 pb-44 pt-5">
+          {/* company details */}
+          <div className="py-8 px-4">
+            <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3">
+              <img src="src/images/logo.png" alt="" className="max-w-[50px]" />
+              Shree Siddharoodha Agro Equipments
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in
+              beatae ea recusandae blanditiis veritatis.
+            </p>
           </div>
-          <div className="w-full lg:w-6/12 px-4">
-            <div className="flex flex-wrap items-top mb-6">
-              <div className="w-full lg:w-4/12 px-4 ml-auto">
-                <span className="block uppercase text-gray-600 text-sm font-semibold mb-2">
-                  Useful Links
-                </span>
-                <ul className="list-unstyled">
-                  <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://www.creative-tim.com/presentation">About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://blog.creative-tim.com">Blog
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://www.github.com/creativetimofficial">Github
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://www.creative-tim.com/bootstrap-themes/free">Free Products
-                    </a>
-                  </li>
 
+          {/* Footer Links */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 col-span-2 md:pl-10">
+            <div>
+              <div className="py-8 px-4">
+                <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
+                  Important Links
+                </h1>
+                <ul className="flex flex-col gap-3">
+                  {ImpFooterLinks.map((link) => (
+                    <li
+                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
+                      key={link.title}
+                    >
+                      <a href={link.link}>{link.title}</a>
+                    </li>
+                  ))}
                 </ul>
               </div>
-              <div className="w-full lg:w-4/12 px-4">
-                <span className="block uppercase text-gray-600 text-sm font-semibold mb-2">
-                  Other Resources
-                </span>
-                <ul className="list-unstyled">
-                  <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md">MIT License
-                  </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/terms">Terms & Conditions
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/privacy">Privacy Policy
-                    </a>
-                  </li>
-                  <li>
-                    <a className="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                        href="https://creative-tim.com/contact-us">Contact Us
-                    </a>
-                  </li>
+            </div>
+            <div>
+              <div className="py-8 px-4">
+                <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
+                  Links
+                </h1>
+                <ul className="flex flex-col gap-3">
+                  {FooterLinks.map((link) => (
+                    <li
+                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200"
+                      key={link.title}
+                    >
+                      <a href={link.link}>{link.title}</a>
+                    </li>
+                  ))}
                 </ul>
+              </div>
+            </div>
 
+            {/* social links */}
+            <div>
+              <div className="flex items-center gap-3 mt-6">
+                <a href="#">
+                  <FaInstagram className="text-3xl" />
+                </a>
+                <a href="#">
+                  <FaFacebook className="text-3xl" />
+                </a>
+                <a href="#">
+                  <FaLinkedin className="text-3xl" />
+                </a>
+              </div>
+              <div className="mt-6">
+                <div className="flex items-center gap-3">
+                  <FaLocationArrow />
+                  <p>Huballi, Karnataka</p>
+                </div>
+                <div className="flex items-center gap-3 mt-3">
+                  <FaMobileAlt />
+                  <p>+91 7411001963</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <hr className="my-6 border-gray-400" />
-        <div className="flex flex-wrap items-center md:justify-between justify-center">
-          <div className="w-full md:w-4/12 px-4 mx-auto text-center">
-            <div className="text-sm text-gray-600 font-semibold py-1">
-              Copyright © {new Date().getFullYear()}{" "}Tailwind Starter Kit by{" "}
-              <a
-                href="https://www.creative-tim.com"
-                className="text-gray-600 hover:text-gray-900"
-              >
-                Creative Tim
-              </a>.
-            </div>
-          </div>
-        </div>
       </div>
-    </footer>
+    </div>
   );
-}
+};
+
+export default Footer;
