@@ -1,22 +1,31 @@
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-
-
-
+import { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import c_logo from "../images/c_logo.png";
+import background from '../images/background.png';
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-grey-900">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <div className="flex lg:flex-1">
-          <a href="#home" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+    <header
+      className="relative bg-[#EFF7FE]"
+      
+    >
+       {/* Optional overlay for better text readability */}
+      <nav
+        className="relative z-10 mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
+        <div className="flex lg:flex-1 items-center">
+          <a href="#home" className="-m-1.5 p-1.5 flex items-center">
+            <img className="h-8 w-auto" src={c_logo} alt="Company Logo" />
+            <span className="ml-3 text-lg font-semibold text-black">
+              Shree Siddharoodha Agro Equipments
+            </span>
           </a>
         </div>
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -28,27 +37,47 @@ export default function Navbar() {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <a href="#about-us" className="text-sm font-semibold leading-6 text-gray-900">
+          <a
+            href="#about-us"
+            className="text-sm font-semibold leading-6 text-black border border-black rounded-full px-4 py-2 hover:bg-blue-300 hover:text-white"
+          >
             About Us
           </a>
-          <a href="#services" className="text-sm font-semibold leading-6 text-gray-900">
+          <a
+            href="#services"
+            className="text-sm font-semibold leading-6 text-black border border-black rounded-full px-4 py-2 hover:bg-blue-300 hover:text-white"
+          >
             Services
           </a>
-          <a href="#products" className="text-sm font-semibold leading-6 text-gray-900">
+          <a
+            href="#products"
+            className="text-sm font-semibold leading-6 text-black border border-black rounded-full px-4 py-2 hover:bg-blue-300 hover:text-white"
+          >
             Products
           </a>
-          <a href="#company" className="text-sm font-semibold leading-6 text-gray-900">
+          <a
+            href="#company"
+            className="text-sm font-semibold leading-6 text-black border border-black rounded-full px-4 py-2 hover:bg-blue-300 hover:text-white"
+          >
             Company
           </a>
         </div>
       </nav>
-      <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+      <Dialog
+        className="lg:hidden relative z-10"
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+      >
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+              <img
+                className="h-8 w-auto"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                alt=""
+              />
             </a>
             <button
               type="button"
@@ -100,5 +129,5 @@ export default function Navbar() {
         </Dialog.Panel>
       </Dialog>
     </header>
-  )
+  );
 }

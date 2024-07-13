@@ -10,6 +10,8 @@ import Promo from './components/About';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Team from './components/Company';
+// import { Carousel } from 'react-responsive-carousel';
+import Carousels from './components/Carousels';
 
 function App() {
   useEffect(() => {
@@ -31,7 +33,9 @@ function App() {
       <P_lists />
       <Team/>
       <Logo_cloud />
+      <Carousels/>
       <Footer />
+      
     </>
   );
 }
