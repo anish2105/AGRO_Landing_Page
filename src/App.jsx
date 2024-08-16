@@ -10,8 +10,7 @@ import Promo from './components/About';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Team from './components/Company';
-// import { Carousel } from 'react-responsive-carousel';
-import Carousels from './components/Carousels';
+
 
 function App() {
   useEffect(() => {
@@ -29,11 +28,10 @@ function App() {
       <Navbar />
       <Hero />
       <Promo />
-      <Products />
-      <P_lists />
+      {/* <Products /> */}
       <Team/>
+      <P_lists />
       <Logo_cloud />
-      <Carousels/>
       <Footer />
       
     </>
